@@ -9,19 +9,26 @@ port = 'COM7'  # Change this to your Arduino's port on Windows
 board = pyfirmata.Arduino(port)
 
 # Define the pin to which the servo is connected (must be a PWM pin)
-servo_pin = board.get_pin('d:10:s')  # 'd' for digital, 's' for servo
+servo_pin1 = board.get_pin('d:11:s')  # 'd' for digital, 's' for servo
+servo_pin2 = board.get_pin('d:10:s')  # 'd' for digital, 's' for servo
+servo_pin3 = board.get_pin('d:9:s')  # 'd' for digital, 's' for servo
+servo_pin4 = board.get_pin('d:6:s')  # 'd' for digital, 's' for servo
+servo_pin5 = board.get_pin('d:5:s')  # 'd' for digital, 's' for servo
+servo_pin6 = board.get_pin('d:3:s')  # 'd' for digital, 's' for servo
 
 # Set the initial position of the servo (0 degrees)
 servo_position = 0
-
-
 
 try:
     # Sweep the servo back and forth
     while True:
         # Move the servo to the current position
-        servo_pin.write(servo_position)
-
+        servo_pin1.write(servo_position)
+        servo_pin2.write(servo_position)
+        servo_pin3.write(servo_position)
+        servo_pin4.write(servo_position)
+        servo_pin5.write(servo_position)
+        servo_pin6.write(servo_position)
         # Increment or decrement the position for the next step
         servo_position += 10  # Adjust the step size as needed
 
